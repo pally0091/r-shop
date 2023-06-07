@@ -27,12 +27,16 @@ const Nav = () => {
               </div>
             ) : (
               <div className="flex">
-                <button className="mx-4 bg-gradient-to-r from-green-400 to-green-600 px-3 py-2 rounded-xl shadow-lg shadow-white hover:shadow-none">
-                  Login
-                </button>
-                <button className="mx-4 bg-gradient-to-r from-blue-400 to-blue-600 px-3 py-2 rounded-xl shadow-lg shadow-white hover:shadow-none">
-                  Signup
-                </button>
+                <Link to="/login">
+                  <button className="mx-4 bg-gradient-to-r from-green-400 to-green-600 px-3 py-2 rounded-xl shadow-lg shadow-white hover:shadow-none">
+                    Login
+                  </button>
+                </Link>
+                <Link to="./signup">
+                  <button className="mx-4 bg-gradient-to-r from-blue-400 to-blue-600 px-3 py-2 rounded-xl shadow-lg shadow-white hover:shadow-none">
+                    Signup
+                  </button>
+                </Link>
               </div>
             )}
           </div>
