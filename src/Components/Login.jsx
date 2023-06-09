@@ -19,7 +19,7 @@ const Login = () => {
       </div>
       <form
         action="submit"
-        className="w-[45%] mx-auto bg-slate-400 p-10 rounded-md shadow-lg shadow-black mt-16"
+        className="w-[45%] mx-auto bg-slate-300 p-10 rounded-md shadow-lg shadow-black mt-16"
       >
         <h3 className="text-xl font-bold my-3">Please Login to your account</h3>
         <div className="flex flex-col">
