@@ -20,6 +20,8 @@ function App() {
         {
           path: "/category/:id",
           element: <Products></Products>,
+          loader: ({ params }) =>
+            fetch(`https://dummyjson.com/products/category/${params.id}`),
         },
       ],
     },
