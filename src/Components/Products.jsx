@@ -8,7 +8,7 @@ const Products = () => {
   const data = useLoaderData();
   const products = data.products;
 
-  console.log(products);
+  // console.log(products);
   return (
     <div className="grid grid-cols-3 gap-3 w-[98%] mt-4 mx-auto">
       {products?.map((product) => (

@@ -5,7 +5,7 @@ import React from "react";
 const Product = ({ product }) => {
   const { title, description, price, brand, thumbnail } = product;
   return (
-    <div className="p-2 border border-black">
+    <div className="p-2 border border-black hover:shadow-inner hover:shadow-black hover:bg-sky-100 transition-all duration-700">
       <div className="w-full h-48 mb-1">
         <img
           className="w-full h-full"
