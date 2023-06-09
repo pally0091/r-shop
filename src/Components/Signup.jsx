@@ -29,21 +29,21 @@ const Signup = () => {
             className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-sky-400"
             name="name"
             type="text"
-            id=""
+            id="name"
             placeholder="A. Jackob"
           />
           <input
             className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-sky-400"
             name="email"
             type="email"
-            id=""
+            id="email"
             placeholder="asc@xxxxxx.com"
           />
           <input
             className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-sky-400"
             name="password"
             type="password"
-            id=""
+            id="password"
             placeholder="password"
           />
           <button
