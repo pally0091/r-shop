@@ -7,10 +7,10 @@ const Login = () => {
   return (
     <div>
       <div className="bg-red-400 p-5">
-        <div className="w-32 mx-auto ring-2 p-1 rounded-full">
+        <div className="w-32 mx-auto ring-2 ring-black p-1 rounded-full">
           <Link to="/">
             <img
-              className="rounded-full"
+              className="rounded-full hover:shadow-md hover:shadow-slate-700"
               src={logo}
               alt=""
             />
