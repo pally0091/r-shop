@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { SyncLoader } from "react-spinners";
 
 const Categories = () => {
@@ -31,11 +31,11 @@ const Categories = () => {
       ) : (
         <div className="overflow-y-scroll h-96">
           {categories?.map((category) => (
-            <Link to={`/category/${category}`}>
+            <NavLink to={`/category/${category}`}>
               <button className="w-full my-1 bg-cyan-200 py-1 uppercase hover:bg-sky-700 hover:text-white transition-all duration-700">
                 {category}
               </button>
-            </Link>
+            </NavLink>
           ))}
         </div>
       )}
