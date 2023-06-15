@@ -22,18 +22,18 @@ const ProductDetails = () => {
 
       {/* product card  */}
       <div className="mt-10 w-[70%] mx-auto shadow-lg shadow-red-400 p-8">
-        <h2 className="text-3xl font-bold">{detail.title}</h2>
+        <h2 className="text-3xl font-bold uppercase">{detail.title}</h2>
         <div className="flex flex-row gap-10 mt-10">
-          <div className="w-1/2 border-2 border-black p-2 bg-sky-200">
+          <div className="w-1/2 border-2 border-black p-2 bg-sky-200 h-72">
             <img
-              className="shadow-md shadow-slate-500"
+              className="shadow-md shadow-slate-500 w-full h-full"
               src={detail.thumbnail}
               alt=""
             />
           </div>
           <div className="w-1/2">
             <h4 className="text-justify my-5">{detail.description}</h4>
-            <div className="flex justify-between my-4 border-b-2 border-dotted border-red-500">
+            <div className="flex justify-between uppercase my-4 border-b-2 border-dotted border-red-500">
               <p>{detail.category}</p>
               <p>{detail.brand}</p>
             </div>

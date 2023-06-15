@@ -16,7 +16,7 @@ const Product = ({ product }) => {
           />
         </div>
       </Link>
-      <h3 className="text-lg font-bold my-1">{title}</h3>
+      <h3 className="text-lg font-bold my-1 uppercase">{title}</h3>
       <p className="text-justify my-1 h-28 overflow-hidden">{description}</p>
       <div className="flex flex-row justify-between">
         <p>Price : $ {price}</p>
