@@ -6,6 +6,7 @@ import Cart from "./Components/Cart";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import Products from "./Components/Products";
+import ProductDetails from "./Components/ProductDetails";
 
 function App() {
   const router = createBrowserRouter([
@@ -36,6 +37,11 @@ function App() {
     {
       path: "/signup",
       element: <Signup></Signup>,
+    },
+    {
+      path: "/products/:id",
+      element: <ProductDetails></ProductDetails>,
+      loader: ({ params }) => fetch(`https://dummyjson.com/products/${params.id}`),
     },
   ]);
   return <RouterProvider router={router}></RouterProvider>;

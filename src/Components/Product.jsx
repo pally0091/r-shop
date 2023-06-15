@@ -1,18 +1,21 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const { title, description, price, brand, thumbnail } = product;
+  const { title, description, price, brand, thumbnail, id } = product;
   return (
     <div className="p-2 border border-black hover:shadow-inner hover:shadow-black hover:bg-sky-100 transition-all duration-700">
-      <div className="w-full h-48 mb-1">
-        <img
-          className="w-full h-full"
-          src={thumbnail}
-          alt=""
-        />
-      </div>
+      <Link to={`/products/${id}`}>
+        <div className="w-full h-48 mb-1">
+          <img
+            className="w-full h-full"
+            src={thumbnail}
+            alt=""
+          />
+        </div>
+      </Link>
       <h3 className="text-lg font-bold my-1">{title}</h3>
       <p className="text-justify my-1 h-28 overflow-hidden">{description}</p>
       <div className="flex flex-row justify-between">
