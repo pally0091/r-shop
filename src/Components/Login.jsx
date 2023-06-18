@@ -4,6 +4,13 @@ import { Link } from "react-router-dom";
 import logo from "../assets/Logo.png";
 
 const Login = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+  };
   return (
     <div>
       <div className="bg-red-400 p-5">
@@ -19,6 +26,7 @@ const Login = () => {
       </div>
       <form
         action="submit"
+        onSubmit={handleSubmit}
         className="w-[45%] mx-auto bg-slate-300 p-10 rounded-md shadow-lg shadow-black mt-16"
       >
         <h3 className="text-xl font-bold my-3">Please Login to your account</h3>
