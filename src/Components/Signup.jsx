@@ -40,6 +40,7 @@ const Signup = () => {
             type="text"
             id="name"
             placeholder="A. Jackob"
+            required
           />
           <input
             className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-sky-400"
@@ -47,6 +48,7 @@ const Signup = () => {
             type="email"
             id="email"
             placeholder="asc@xxxxxx.com"
+            required
           />
           <input
             className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-sky-400"
@@ -54,6 +56,7 @@ const Signup = () => {
             type="password"
             id="password"
             placeholder="password"
+            required
           />
           <button
             className="bg-gradient-to-r from-blue-300 to-sky-500 p-2 rounded-md hover:bg-gradient-to-l"

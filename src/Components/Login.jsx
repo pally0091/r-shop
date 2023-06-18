@@ -37,6 +37,7 @@ const Login = () => {
             type="email"
             id="email"
             placeholder="asc@xxxxxx.com"
+            required
           />
           <input
             className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-yellow-300"
@@ -44,6 +45,7 @@ const Login = () => {
             type="password"
             id="password"
             placeholder="password"
+            required
           />
           <button
             className="bg-gradient-to-r from-lime-300 to-green-500 p-2 rounded-md hover:bg-gradient-to-l"
