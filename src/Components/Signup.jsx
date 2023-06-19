@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Logo.png";
 import { AuthContext } from "./Context";
+import { updateProfile } from "firebase/auth";
 
 const Signup = () => {
   const { createUser, loading, setLoading } = useContext(AuthContext);
