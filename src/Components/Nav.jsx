@@ -1,9 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "./Context";
 
 const Nav = () => {
-  const [user, setUser] = useState("");
+  // const [user, setUser] = useState("");
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
   return (
     <div>
       <div className="flex items-center justify-between py-5 px-10 bg-yellow-400 shadow-inner shadow-black">

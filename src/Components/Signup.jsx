@@ -1,16 +1,39 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Logo.png";
+import { AuthContext } from "./Context";
 
 const Signup = () => {
-  const handleSubmit = (e) => {
+  const { createUser, loading, setLoading } = useContext(AuthContext);
+  const [currentUser, setCurrentUser] = useState(null);
+  const navigate = useNavigate();
+  if (currentUser) {
+    navigate("/");
+  }
+
+  const handleSignup = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password);
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        setCurrentUser(user).then((userCredential) => {
+          userCredential.user.updateProfile({
+            displayName: name,
+          });
+        });
+        console.log(user);
+        alert("Registretion Success");
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Something went wrong");
+      });
   };
   return (
     <div>
@@ -28,7 +51,7 @@ const Signup = () => {
       <form
         className="w-[45%] mx-auto bg-green-200 p-10 rounded-md shadow-lg shadow-black mt-16"
         action="submit"
-        onSubmit={handleSubmit}
+        onSubmit={handleSignup}
       >
         <h3 className="text-xl font-bold my-3">
           Register here for your account{" "}
