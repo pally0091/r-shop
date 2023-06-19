@@ -8,6 +8,13 @@ const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
 
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .cath((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div>
       <div className="flex items-center justify-between py-5 px-10 bg-yellow-400 shadow-inner shadow-black">
@@ -23,9 +30,13 @@ const Nav = () => {
               <div className="flex items-center">
                 <p className="mx-2 font-bold text-xl text-lime-600">
                   {" "}
-                  <span className="text-lg text-black">Welcome </span> {user}
+                  <span className="text-lg text-black">Welcome </span>{" "}
+                  {user.displayName}
                 </p>
-                <button className="mx-4 bg-gradient-to-r from-red-400 to-red-600 px-3 py-2 rounded-xl shadow-lg shadow-white hover:shadow-none">
+                <button
+                  onClick={handleLogout}
+                  className="mx-4 bg-gradient-to-r from-red-400 to-red-600 px-3 py-2 rounded-xl shadow-lg shadow-white hover:shadow-none"
+                >
                   Logout
                 </button>
               </div>

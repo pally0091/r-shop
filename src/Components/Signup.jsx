@@ -21,14 +21,8 @@ const Signup = () => {
     console.log(name, email, password);
     createUser(email, password)
       .then((result) => {
-        const user = result.user;
-        setCurrentUser(user).then((userCredential) => {
-          userCredential.user.updateProfile({
-            displayName: name,
-          });
-        });
-        console.log(user);
-        alert("Registretion Success");
+        setCurrentUser(result.user);
+        alert("Registration Successful!");
       })
       .catch((err) => {
         console.log(err);
