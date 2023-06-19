@@ -13,22 +13,27 @@ const Signup = () => {
     navigate("/");
   }
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password);
-    createUser(email, password)
-      .then((result) => {
-        setCurrentUser(result.user);
-        alert("Registration Successful!");
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("Something went wrong");
-      });
+
+    try {
+      const { user } = await createUser(email, password);
+
+      if (user) {
+        // console.log(user);
+        await user.updateProfile({
+          displayName: name,
+        });
+      }
+      setCurrentUser(user);
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div>
