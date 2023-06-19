@@ -1,15 +1,40 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Logo.png";
+import { AuthContext } from "./Context";
 
 const Login = () => {
-  const handleSubmit = (e) => {
+  const { loginWithEmailPass, loading, setLoading, googleLogin } =
+    useContext(AuthContext);
+  const [currentUser, setCurrentUser] = useState(null);
+  const navigate = useNavigate();
+  if (currentUser) {
+    navigate("/");
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+
+    try {
+      const { user } = await loginWithEmailPass(email, password);
+      setCurrentUser(user);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleGoogleLogin = async (e) => {
+    try {
+      const { user } = await googleLogin();
+      setCurrentUser(user);
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div>
@@ -56,7 +81,10 @@ const Login = () => {
         </div>
         <hr className="my-5" />
         <div>
-          <button className="bg-gradient-to-r from-red-400 to-red-600 p-2 rounded-md hover:bg-gradient-to-l w-full">
+          <button
+            onClick={handleGoogleLogin}
+            className="bg-gradient-to-r from-red-400 to-red-600 p-2 rounded-md hover:bg-gradient-to-l w-full"
+          >
             Login With Google
           </button>
           <h5 className=" font-semibold my-2">

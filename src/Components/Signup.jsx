@@ -6,7 +6,8 @@ import { AuthContext } from "./Context";
 import { updateProfile } from "firebase/auth";
 
 const Signup = () => {
-  const { createUser, loading, setLoading } = useContext(AuthContext);
+  const { createUser, loading, setLoading, googleLogin } =
+    useContext(AuthContext);
   const [currentUser, setCurrentUser] = useState(null);
   const navigate = useNavigate();
   if (currentUser) {
@@ -24,12 +25,14 @@ const Signup = () => {
     try {
       const { user } = await createUser(email, password);
 
-      if (user) {
-        // console.log(user);
-        await user.updateProfile({
-          displayName: name,
-        });
-      }
+      setCurrentUser(user);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const handleGoogleSignup = async (e) => {
+    try {
+      const { user } = await googleLogin();
       setCurrentUser(user);
     } catch (err) {
       console.log(err);
@@ -90,7 +93,10 @@ const Signup = () => {
         </div>
         <hr className="my-5 border-black" />
         <div>
-          <button className="bg-gradient-to-r from-red-400 to-red-600 p-2 rounded-md hover:bg-gradient-to-l w-full">
+          <button
+            onClick={handleGoogleSignup}
+            className="bg-gradient-to-r from-red-400 to-red-600 p-2 rounded-md hover:bg-gradient-to-l w-full"
+          >
             Register With Google
           </button>
           <h5 className=" font-semibold my-2">
