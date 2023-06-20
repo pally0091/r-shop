@@ -47,6 +47,15 @@ const Cart = () => {
             </div>
           ))}
           <p className="text-lg">Total Price : {calculateTotalPrice()}</p>
+          <button className="bg-sky-400 px-5 py-2 rounded-md hover:bg-sky-200 my-4 mx-2">
+            Checkout
+          </button>
+          <button
+            className="bg-red-400 px-5 py-2 rounded-md hover:bg-red-200 my-4 mx-2"
+            onClick={clearCart}
+          >
+            Clear Cart
+          </button>
         </>
       )}
     </div>
