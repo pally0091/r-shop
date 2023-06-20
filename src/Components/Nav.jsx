@@ -22,7 +22,7 @@ const Nav = () => {
         <div className="flex items-center">
           <div>
             <Link to="/cart">
-              <p className="mx-2">Cart Link</p>
+              <p className="mx-2">Cart </p>
             </Link>
           </div>
           <div>

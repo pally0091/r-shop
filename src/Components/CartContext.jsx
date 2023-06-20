@@ -19,6 +19,10 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  const calculateTotalPrice = () => {
+    return cartItems.reduce((totalPrice, item) => totalPrice + item.price, 0);
+  };
+
   const clearCart = () => {
     setCartItems([]);
   };
@@ -28,6 +32,7 @@ export const CartProvider = ({ children }) => {
     addToCart,
     removeFromCart,
     clearCart,
+    calculateTotalPrice,
   };
 
   return (

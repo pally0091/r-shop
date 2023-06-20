@@ -5,7 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Cart = () => {
-  const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
+  const { cartItems, removeFromCart, clearCart, calculateTotalPrice } =
+    useContext(CartContext);
   const handleRemoveFromCart = (productId) => {
     removeFromCart(productId);
     toast.error("Product removed from Cart!", {
@@ -45,6 +46,7 @@ const Cart = () => {
               <ToastContainer></ToastContainer>
             </div>
           ))}
+          <p className="text-lg">Total Price : {calculateTotalPrice()}</p>
         </>
       )}
     </div>
