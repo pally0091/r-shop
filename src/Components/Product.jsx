@@ -24,7 +24,7 @@ const Product = ({ product }) => {
     });
   };
   return (
-    <div className="p-2 border border-black hover:shadow-inner hover:shadow-black hover:bg-sky-100 transition-all duration-700">
+    <div className="p-2 border border-black hover:shadow-inner hover:shadow-black hover:bg-amber-100 transition-all duration-700">
       <Link to={`/products/${id}`}>
         <div className="w-full h-48 mb-1">
           <img

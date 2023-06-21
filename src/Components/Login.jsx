@@ -38,7 +38,7 @@ const Login = () => {
   };
   return (
     <div>
-      <div className="bg-red-400 p-5">
+      <div className="bg-green-400 p-5">
         <div className="w-32 mx-auto ring-2 ring-black p-1 rounded-full">
           <Link to="/">
             <img

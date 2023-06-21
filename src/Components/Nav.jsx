@@ -17,22 +17,18 @@ const Nav = () => {
   };
   return (
     <div>
-      <div className="flex items-center justify-between py-5 px-10 bg-yellow-400 shadow-inner shadow-black">
-        <div>Menus</div>
+      <div className="flex justify-end py-5 px-10 bg-gradient-to-b from-amber-400 to-red-400 shadow-inner shadow-black">
         <div className="flex items-center">
-          <div>
-            <Link to="/cart">
-              <p className="mx-2">Cart </p>
-            </Link>
-          </div>
           <div>
             {user ? (
               <div className="flex items-center">
-                <p className="mx-2 font-bold text-xl text-lime-600">
-                  {" "}
-                  <span className="text-lg text-black">Welcome </span>{" "}
-                  {user.displayName}
-                </p>
+                <p className="text-lg font-bold mx-2">Welcome</p>
+                <div className="mx-2  hover:bg-slate-200 p-2 transition-all duration-700">
+                  <p className="text-lg text-right italic font-semibold border-b border-black">
+                    {user.displayName ? user.displayName : "N/A"}
+                  </p>
+                  <p className="text-xs">{user.email}</p>
+                </div>
                 <button
                   onClick={handleLogout}
                   className="mx-4 bg-gradient-to-r from-red-400 to-red-600 px-3 py-2 rounded-xl shadow-lg shadow-white hover:shadow-none"

@@ -8,7 +8,7 @@ import logo from "../assets/Logo.png";
 const Main = () => {
   return (
     <div>
-      <div className="bg-red-400 p-5">
+      <div className="flex flex-row items-end bg-gradient-to-b from-red-400 to-amber-400 p-5">
         <div className="w-32 mx-auto ring-2 ring-black p-1 rounded-full">
           <Link to="/">
             <img
@@ -16,6 +16,13 @@ const Main = () => {
               src={logo}
               alt=""
             />
+          </Link>
+        </div>
+        <div>
+          <Link to="/cart">
+            <p className="text-xl bg-white p-1 rounded-md mx-2 hover:bg-black ">
+              🛒{" "}
+            </p>
           </Link>
         </div>
       </div>
