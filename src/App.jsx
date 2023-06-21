@@ -7,6 +7,7 @@ import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import Products from "./Components/Products";
 import ProductDetails from "./Components/ProductDetails";
+import PrivateRoute from "./Components/PrivateRoute";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,7 +29,11 @@ function App() {
     },
     {
       path: "/cart",
-      element: <Cart></Cart>,
+      element: (
+        <PrivateRoute>
+          <Cart></Cart>
+        </PrivateRoute>
+      ),
     },
     {
       path: "/login",
@@ -41,7 +46,8 @@ function App() {
     {
       path: "/products/:id",
       element: <ProductDetails></ProductDetails>,
-      loader: ({ params }) => fetch(`https://dummyjson.com/products/${params.id}`),
+      loader: ({ params }) =>
+        fetch(`https://dummyjson.com/products/${params.id}`),
     },
   ]);
   return <RouterProvider router={router}></RouterProvider>;
