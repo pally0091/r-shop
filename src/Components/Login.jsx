@@ -57,7 +57,7 @@ const Login = () => {
         <h3 className="text-xl font-bold my-3">Please Login to your account</h3>
         <div className="flex flex-col">
           <input
-            className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-yellow-300"
+            className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-yellow-300 shadow-inner shadow-black"
             name="email"
             type="email"
             id="email"
@@ -65,7 +65,7 @@ const Login = () => {
             required
           />
           <input
-            className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-yellow-300"
+            className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-yellow-300  shadow-inner shadow-black"
             name="password"
             type="password"
             id="password"

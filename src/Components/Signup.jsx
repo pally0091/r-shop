@@ -61,7 +61,7 @@ const Signup = () => {
         </h3>
         <div className="flex flex-col">
           <input
-            className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-sky-400"
+            className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-sky-400  shadow-inner shadow-black"
             name="name"
             type="text"
             id="name"
@@ -69,15 +69,15 @@ const Signup = () => {
             required
           />
           <input
-            className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-sky-400"
+            className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-sky-400  shadow-inner shadow-black"
             name="email"
             type="email"
             id="email"
-            placeholder="asc@xxxxxx.com"
+            placeholder="asc@mnb.com"
             required
           />
           <input
-            className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-sky-400"
+            className="my-5 text-xl p-2 rounded-md focus:shadow-md focus:shadow-sky-400  shadow-inner shadow-black"
             name="password"
             type="password"
             id="password"
