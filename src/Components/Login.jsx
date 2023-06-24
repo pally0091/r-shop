@@ -26,7 +26,7 @@ const Login = () => {
       setCurrentUser(user);
     } catch (err) {
       console.log(err);
-      setError("Invalid login info");
+      setError("Invalid login info!");
     }
   };
 
@@ -36,6 +36,7 @@ const Login = () => {
       setCurrentUser(user);
     } catch (err) {
       console.log(err);
+      setError("Something went wrong!");
     }
   };
   return (
@@ -74,7 +75,7 @@ const Login = () => {
             placeholder="password"
             required
           />
-          {error && <p className="text-red-400 ">{error}</p>}
+          {error && <p className="text-red-600 ">{error}</p>}
           <button
             className="bg-gradient-to-r from-lime-300 to-green-500 p-2 rounded-md hover:bg-gradient-to-l"
             type="submit"
