@@ -8,6 +8,7 @@ const Login = () => {
   const { loginWithEmailPass, loading, setLoading, googleLogin } =
     useContext(AuthContext);
   const [currentUser, setCurrentUser] = useState(null);
+  const [error, setError] = useState();
   const navigate = useNavigate();
   if (currentUser) {
     navigate("/");
@@ -25,6 +26,7 @@ const Login = () => {
       setCurrentUser(user);
     } catch (err) {
       console.log(err);
+      setError("Invalid login info");
     }
   };
 
@@ -72,6 +74,7 @@ const Login = () => {
             placeholder="password"
             required
           />
+          {error && <p className="text-red-400 ">{error}</p>}
           <button
             className="bg-gradient-to-r from-lime-300 to-green-500 p-2 rounded-md hover:bg-gradient-to-l"
             type="submit"
