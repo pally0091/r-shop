@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Product from "./Product";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Link } from "react-router-dom";
 
 const HotSaleContainer = () => {
   const hotsales = [
@@ -43,14 +45,53 @@ const HotSaleContainer = () => {
       thumbnail: "https://i.dummyjson.com/data/products/19/thumbnail.jpg",
     },
   ];
+
   return (
-    <div className="grid grid-cols-3 bg-red-400 gap-4  p-3">
-      {hotsales.map((product) => (
-        <Product
-          key={product.id}
-          product={product}
-        ></Product>
-      ))}
+    <div className="h-80 bg-red-400 py-10 px-5">
+      <Carousel
+        showThumbs={false}
+        infiniteLoop={true}
+        autoPlay={true}
+        interval={5000}
+        showStatus={false}
+        showArrows={true}
+        showIndicators={true}
+        dynamicHeight={true}
+        emulateTouch={true}
+        stopOnHover={true}
+        swipeable={true}
+      >
+        {hotsales.map((product) => (
+          <div
+            key={product.id}
+            className="flex flex-row items-center  "
+          >
+            <div className="w-1/2 px-2">
+              <Link to={`/products/${product.id}`}>
+                <div className="w-full h-64 ">
+                  <img
+                    className="w-full h-full rounded-md"
+                    src={product.thumbnail}
+                    alt=""
+                  />
+                </div>
+              </Link>
+            </div>
+            <div className="w-1/2 p-4">
+              <h3 className="text-lg font-bold my-1 uppercase">
+                {product.title}
+              </h3>
+              <p className="text-justify my-1 h-28 overflow-hidden">
+                {product.description}
+              </p>
+              <div className="flex flex-row justify-evenly">
+                <p>Price : $ {product.price}</p>
+                <p>{product.brand}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Carousel>
     </div>
   );
 };

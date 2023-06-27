@@ -29,7 +29,7 @@ const Cart = () => {
         ) : (
           <>
             <p>Your Cart have {cartItems.length} items</p>
-            {cartItems.map((item) => (
+            {cartItems?.map((item) => (
               <div
                 className="bg-white w-full mx-auto p-3 rounded-md border-4 border-blue-600 border-double flex justify-evenly items-center my-3"
                 key={item.id}

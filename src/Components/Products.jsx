@@ -15,7 +15,7 @@ const Products = () => {
       setLoading(false);
     }, 2000);
   }, []);
-  // console.log(products);
+  // console.log(products); 
   return (
     <div className="flex justify-center">
       {loading ? (
