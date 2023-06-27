@@ -51,11 +51,11 @@ const Cart = () => {
                 >
                   X
                 </button>
-                <ToastContainer></ToastContainer>
               </div>
             ))}
           </>
         )}
+        <ToastContainer></ToastContainer>
       </div>
       <div className="w-[30%] border-4 p-1 border-l-red-600 border-double">
         <p className="text-lg">Total Price : $ {calculateTotalPrice()}</p>
