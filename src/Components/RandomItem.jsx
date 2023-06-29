@@ -10,4 +10,3 @@ const RandomItem = () => {
 };
 
 export default RandomItem;
-<h1>random item </h1>;
