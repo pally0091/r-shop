@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import { Link, Outlet } from "react-router-dom";
 import SideNav from "./SideNav";
 import logo from "../assets/Logo.png";
+import RandomItem from "./RandomItem";
 
 const Main = () => {
   return (
@@ -29,6 +30,7 @@ const Main = () => {
       <div className="flex">
         <div className="w-[20%]">
           <SideNav></SideNav>
+          <RandomItem></RandomItem>
         </div>
         <div className="w-[80%]">
           <Nav></Nav>
