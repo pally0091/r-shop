@@ -39,7 +39,7 @@ const Banner = () => {
       {bannerItems.map((bannerItem) => (
         <div
           key={bannerItem.id}
-          className="border border-black p-2 rounded-md shadow-md shadow-sky-300 hover:shadow-none transition-all duration-500"
+          className="bg-red-100 border border-black p-2 rounded-md shadow-md shadow-amber-300 hover:shadow-none transition-all duration-500"
         >
           <h5 className="bg-white rounded-t-md shadow-md shadow-slate-600 text-lg font-semibold">
             {bannerItem.title}

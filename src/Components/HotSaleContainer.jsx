@@ -47,7 +47,7 @@ const HotSaleContainer = () => {
   ];
 
   return (
-    <div className="h-80 bg-red-400 py-10 px-5">
+    <div className="h-80 bg-blue-300 py-10 px-5">
       <Carousel
         showThumbs={false}
         infiniteLoop={true}

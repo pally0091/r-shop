@@ -57,7 +57,7 @@ const ProductDetails = () => {
       </div>
 
       {/* product card  */}
-      <div className="mt-10 w-[70%] mx-auto shadow-lg shadow-red-400 p-8">
+      <div className="mt-10 w-[70%] mx-auto border border-green-700 p-8">
         <h2 className="text-3xl font-bold uppercase">{title}</h2>
         <div className="flex flex-row gap-10 mt-10">
           <div className="w-1/2 border-2 border-black p-2 bg-sky-200 h-72">

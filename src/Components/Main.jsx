@@ -9,7 +9,7 @@ import RandomItem from "./RandomItem";
 const Main = () => {
   return (
     <div>
-      <div className="flex flex-row items-end bg-gradient-to-b from-red-400 to-amber-400 p-5">
+      <div className="flex flex-row items-end bg-gradient-to-b from-red-200 to-amber-200 p-5">
         <div className="w-32 mx-auto ring-2 ring-black p-1 rounded-full">
           <Link to="/">
             <img

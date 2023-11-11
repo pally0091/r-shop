@@ -17,7 +17,7 @@ const Nav = () => {
   };
   return (
     <div>
-      <div className="flex justify-end py-5 px-10 bg-gradient-to-b from-amber-400 to-red-400 shadow-inner shadow-black">
+      <div className="flex justify-end py-5 px-10 bg-gradient-to-b from-amber-200 to-red-200 shadow-inner shadow-black">
         <div className="flex items-center">
           <div>
             {user ? (
